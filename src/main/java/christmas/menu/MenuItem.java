@@ -1,0 +1,13 @@
+package christmas.menu;
+
+public class MenuItem {
+    private final String name;
+    private final int price;
+    private MenuCategory menuCategory;
+
+    public MenuItem(String name, int price, MenuCategory menuCategory) {
+        this.name = name;
+        this.price = price;
+        this.menuCategory = menuCategory;
+    }
+}
