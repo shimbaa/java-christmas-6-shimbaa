@@ -1,5 +1,5 @@
 package christmas.menu;
 
 public enum MenuCategory {
-    APPETIZER, MAIN, DESSERT, BEVERAGE
+    APPETIZER, MAIN, DESSERT, BEVERAGE, TOTAL_ORDER_AMOUNT
 }
