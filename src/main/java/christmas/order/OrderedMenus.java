@@ -15,4 +15,10 @@ public class OrderedMenus {
                 .filter(MenuItem::isDessert)
                 .count();
     }
+
+    public int countMainMenu() {
+        return (int) menuItems.stream()
+                .filter(MenuItem::isMain)
+                .count();
+    }
 }

@@ -14,4 +14,8 @@ public class MenuItem {
     public boolean isDessert() {
         return menuCategory.equals(MenuCategory.DESSERT);
     }
+
+    public boolean isMain() {
+        return menuCategory.equals(MenuCategory.MAIN);
+    }
 }
