@@ -1,7 +1,6 @@
 package christmas;
 
 import christmas.discount.Event;
-import christmas.menu.MenuCategory;
 import christmas.order.Order;
 import christmas.order.OrderedMenus;
 import christmas.order.VisitingDate;
@@ -11,7 +10,7 @@ import java.util.Map;
 public class EventService {
 
     private static final int CHRISTMAS_DAY = 25;
-    private Map<Event, Map<MenuCategory, Integer>> totalBenefit = new HashMap<>();
+    private final Map<Event, Integer> totalBenefit = new HashMap<>();
 
     public void applyDiscount(Order order) {
         OrderedMenus orderedMenus = order.getOrderedMenus();
@@ -19,7 +18,7 @@ public class EventService {
 
         if (visitingDate.isInChristmasEventRange()) {
             int discountAmount = 900 + (CHRISTMAS_DAY - (visitingDate.getDDayUntilChristmas()) * 100);
-            addBenefit(Event.CHRISTMAS_DISCOUNT, MenuCategory.TOTAL_ORDER_AMOUNT, discountAmount);
+            totalBenefit.put(Event.CHRISTMAS_DISCOUNT, discountAmount);
         }
     }
 
