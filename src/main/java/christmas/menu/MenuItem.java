@@ -10,4 +10,8 @@ public class MenuItem {
         this.price = price;
         this.menuCategory = menuCategory;
     }
+
+    public boolean isDessert() {
+        return menuCategory.equals(MenuCategory.DESSERT);
+    }
 }

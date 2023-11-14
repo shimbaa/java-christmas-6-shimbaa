@@ -9,4 +9,10 @@ public class OrderedMenus {
     public OrderedMenus(List<MenuItem> menuItems) {
         this.menuItems = menuItems;
     }
+
+    public int countDessertMenu() {
+        return (int) menuItems.stream()
+                .filter(MenuItem::isDessert)
+                .count();
+    }
 }

@@ -20,12 +20,11 @@ public class EventService {
             int discountAmount = 900 + (CHRISTMAS_DAY - (visitingDate.getDDayUntilChristmas()) * 100);
             totalBenefit.put(Event.CHRISTMAS_DISCOUNT, discountAmount);
         }
-    }
 
-    private void addBenefit(Event event, MenuCategory menuCategory, Integer discountAmount) {
-        Map<MenuCategory, Integer> discountTarget = new HashMap<>();
-        discountTarget.put(menuCategory, discountAmount);
-
-        totalBenefit.put(event, discountTarget);
+        if (orderedMenus.countDessertMenu() != 0 && visitingDate.isWeekDayEventRange()) {
+            int dessertMenuCount = orderedMenus.countDessertMenu();
+            int discountAmount = dessertMenuCount * 2_023;
+            totalBenefit.put(Event.WEEKDAY_DISCOUNT, discountAmount);
+        }
     }
 }
