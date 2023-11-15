@@ -14,8 +14,8 @@ public class OrderedMenuTest {
     @Test
     void createOrderedMenusByOnlyBeverage() {
         assertThatThrownBy(
-                        () -> OrderedMenus.of(List.of("제로콜라", "레드와인", "샴페인"))
-                ).isInstanceOf(IllegalArgumentException.class)
+                () -> OrderedMenus.of(List.of("제로콜라", "레드와인", "샴페인"))
+        ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ONLY_BEVERAGE);
     }
 
@@ -23,7 +23,7 @@ public class OrderedMenuTest {
     @Test
     void createOrderedMenusByNotOnlyBeverage() {
         assertThatCode(
-                        () -> OrderedMenus.of(List.of("제로콜라", "레드와인", "샴페인", "양송이수프"))
-                ).doesNotThrowAnyException();
+                () -> OrderedMenus.of(List.of("제로콜라", "레드와인", "샴페인", "양송이수프"))
+        ).doesNotThrowAnyException();
     }
 }
