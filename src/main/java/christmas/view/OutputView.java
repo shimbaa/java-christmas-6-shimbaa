@@ -2,6 +2,7 @@ package christmas.view;
 
 import christmas.VisitingDateDTO;
 import christmas.event.Event;
+import christmas.event.EventBadge;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Map;
@@ -75,6 +76,12 @@ public class OutputView {
         System.out.println();
         System.out.println("<할인 후 예상 결제 금액>");
         System.out.println(getDecimalFormat(totalPriceAfterDiscount) + "원");
+    }
+
+    public void printEventBadge(EventBadge eventBadge) {
+        System.out.println();
+        System.out.println("<12월 이벤트 배지>");
+        System.out.println(eventBadge.getLabel());
     }
 
     private String getDecimalFormat(int number) {

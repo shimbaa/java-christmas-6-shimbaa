@@ -1,6 +1,7 @@
 package christmas;
 
 import christmas.event.Event;
+import christmas.event.EventBadge;
 import christmas.event.EventService;
 import christmas.order.Order;
 import christmas.order.OrderedMenus;
@@ -39,11 +40,22 @@ public class Controller {
         outputView.printBenefitDetails(totalBenefit);
         outputView.printTotalBenefitAmount(eventService.getTotalBenefitAmount());
 
+        printTotalOrderPriceAfterDiscount(orderedMenus);
+        printEventBadge();
+    }
+
+    private void printTotalOrderPriceAfterDiscount(OrderedMenus orderedMenus) {
         int totalPrice = orderedMenus.getTotalPrice();
         int totalDiscountAmount = eventService.getTotalDiscountAmount();
         int totalPriceAfterDiscount = totalPrice - totalDiscountAmount;
 
         outputView.printTotalOrderPriceAfterDiscount(totalPriceAfterDiscount);
+    }
+
+    private void printEventBadge() {
+        int totalBenefitAmount = eventService.getTotalBenefitAmount();
+        EventBadge eventBadge = EventBadge.of(totalBenefitAmount);
+        outputView.printEventBadge(eventBadge);
     }
 
     private VisitingDate getVisitingDate() {
