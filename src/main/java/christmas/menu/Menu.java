@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Menu {
-    private Map<String, MenuItem> menuItems;
+    private static final String INVALID_ORDER = "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.";
+    private static Map<String, MenuItem> menuItems;
 
     public Menu() {
         menuItems = new HashMap<>();
@@ -31,7 +32,14 @@ public class Menu {
         menuItems.put(name, new MenuItem(name, price, category));
     }
 
-    public MenuItem getMenuItem(String name) {
+    public static MenuItem getMenuItem(String name) {
+        validateNameExists(name);
         return menuItems.get(name);
+    }
+
+    private static void validateNameExists(String name) {
+        if (menuItems.get(name) == null) {
+            throw new IllegalArgumentException(INVALID_ORDER);
+        }
     }
 }
