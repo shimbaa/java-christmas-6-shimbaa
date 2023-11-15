@@ -45,12 +45,18 @@ public class OutputView {
     public void printBenefitDetails(Map<Event, Integer> totalBenefit) {
         System.out.println();
         System.out.println("<혜택 내역>");
+        if (totalBenefit.isEmpty()) {
+            System.out.println("없음");
+        }
+        if (!totalBenefit.isEmpty()) {
+            totalBenefit.forEach(this::printExistingBenefit);
+        }
+    }
 
-        totalBenefit.forEach((event, discount) -> {
-            if (discount != 0) {
-                System.out.println(formatDiscount(event, discount));
-            }
-        });
+    private void printExistingBenefit(Event event, Integer discount) {
+        if (discount != 0) {
+            System.out.println(formatDiscount(event, discount));
+        }
     }
 
     private String formatDiscount(Event event, int discount) {
