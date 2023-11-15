@@ -7,6 +7,7 @@ public class VisitingDate {
     private static final int YEAR = 2023;
     private static final int DECEMBER = 12;
     private static final int CHRISTMAS_DAY = 25;
+    private static final String INVALID_DATE = "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.";
 
     private final int dayOfMonth;
 
@@ -15,6 +16,9 @@ public class VisitingDate {
     }
 
     private VisitingDate(int dayOfMonth) {
+        if (dayOfMonth < 1 || dayOfMonth > 31) {
+            throw new IllegalArgumentException(INVALID_DATE);
+        }
         this.dayOfMonth = dayOfMonth;
     }
 
