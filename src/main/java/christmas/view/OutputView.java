@@ -8,6 +8,7 @@ import java.util.Map;
 public class OutputView {
 
     public void printOrderedMenu(List<MenuInputForm> menuInputForms) {
+        System.out.println();
         System.out.println("<주문 메뉴>");
         menuInputForms.forEach(menuInputForm ->
                 System.out.printf("%s %d개\n", menuInputForm.getMenuName(), menuInputForm.getMenuQuantity()));
@@ -20,13 +21,14 @@ public class OutputView {
     }
 
     public void printPresentEvent(Map<Event, Integer> totalBenefit) {
+        System.out.println();
         System.out.println("<증정 메뉴>");
         Integer benefit = totalBenefit.getOrDefault(Event.PRESENT_EVENT, 0);
         if (benefit == 0) {
             System.out.println("없음");
         }
         if (benefit != 0) {
-            System.out.println(getDecimalFormat(benefit));
+            System.out.println("샴페인 1개");
         }
     }
 
