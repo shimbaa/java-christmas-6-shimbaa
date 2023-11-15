@@ -1,6 +1,6 @@
 package christmas.view;
 
-import christmas.VisitingDateDTO;
+import christmas.order.VisitingDateDTO;
 import christmas.event.Event;
 import christmas.event.EventBadge;
 import java.text.DecimalFormat;

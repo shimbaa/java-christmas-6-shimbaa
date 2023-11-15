@@ -1,4 +1,4 @@
-package christmas;
+package christmas.order;
 
 public class VisitingDateDTO {
 

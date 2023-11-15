@@ -1,6 +1,5 @@
 package christmas.order;
 
-import christmas.VisitingDateDTO;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
