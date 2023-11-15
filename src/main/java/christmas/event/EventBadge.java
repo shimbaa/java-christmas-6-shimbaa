@@ -1,10 +1,10 @@
 package christmas.event;
 
 public enum EventBadge {
-    STAR("별",5_000, 10_000),
-    TREE("트리",10_000, 20_000),
-    SANTA("산타",20_000, Integer.MAX_VALUE),
-    NONE("없음",0, 0);
+    STAR("별", 5_000, 10_000),
+    TREE("트리", 10_000, 20_000),
+    SANTA("산타", 20_000, Integer.MAX_VALUE),
+    NONE("없음", 0, 0);
 
     private final String label;
     private final int minAmount;
