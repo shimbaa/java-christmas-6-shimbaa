@@ -27,6 +27,7 @@ public class Controller {
         Order order = new Order(visitingDate, orderedMenus);
 
         outputView.printOrderedMenu(menuInputForms);
+        outputView.printTotalOrderPriceBeforeDiscount(orderedMenus.getTotalPrice());
 
         eventService.applyDiscount(order);
     }
