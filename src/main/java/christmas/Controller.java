@@ -22,26 +22,27 @@ public class Controller {
 
     public void run() {
         inputView.printHelloMessage();
+        Order order = new Order(getVisitingDate(), getOrderedMenus());
 
-        VisitingDate visitingDate = getVisitingDate();
+        printOrderedInformation(order.getVisitingDate(), order.getOrderedMenus());
+        eventService.applyDiscount(order);
 
-        OrderedMenus orderedMenus = getOrderedMenus();
+        printTotalBenefits();
+        printTotalOrderPriceAfterDiscount(order.getOrderedMenus());
+        printEventBadge();
+    }
 
-        Order order = new Order(visitingDate, orderedMenus);
-
+    private void printOrderedInformation(VisitingDate visitingDate, OrderedMenus orderedMenus) {
         outputView.printBenefitMessage(visitingDate.getVisitingDateDTO());
         outputView.printOrderedMenu(menuInputForms);
         outputView.printTotalOrderPriceBeforeDiscount(orderedMenus.getTotalPrice());
+    }
 
-        eventService.applyDiscount(order);
-
+    private void printTotalBenefits() {
         Map<Event, Integer> totalBenefit = eventService.getTotalBenefit();
         outputView.printPresentEvent(totalBenefit);
         outputView.printBenefitDetails(totalBenefit);
         outputView.printTotalBenefitAmount(eventService.getTotalBenefitAmount());
-
-        printTotalOrderPriceAfterDiscount(orderedMenus);
-        printEventBadge();
     }
 
     private void printTotalOrderPriceAfterDiscount(OrderedMenus orderedMenus) {
