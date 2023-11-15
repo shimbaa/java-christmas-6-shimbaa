@@ -3,7 +3,7 @@ package christmas.menu;
 public class MenuItem {
     private final String name;
     private final int price;
-    private MenuCategory menuCategory;
+    private final MenuCategory menuCategory;
 
     public MenuItem(String name, int price, MenuCategory menuCategory) {
         this.name = name;
@@ -17,5 +17,13 @@ public class MenuItem {
 
     public boolean isMain() {
         return menuCategory.equals(MenuCategory.MAIN);
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public MenuCategory getMenuCategory() {
+        return menuCategory;
     }
 }
