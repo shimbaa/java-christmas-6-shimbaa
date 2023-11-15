@@ -17,7 +17,6 @@ public class Menu {
         addItem("타파스", 5_500, MenuCategory.APPETIZER);
         addItem("시저샐러드", 8_000, MenuCategory.APPETIZER);
         addItem("티본스테이크", 55_000, MenuCategory.MAIN);
-        addItem("티본스테이크", 55_000, MenuCategory.MAIN);
         addItem("바비큐립", 54_000, MenuCategory.MAIN);
         addItem("해산물파스타", 35_000, MenuCategory.MAIN);
         addItem("크리스마스파스타", 25_000, MenuCategory.MAIN);
@@ -32,12 +31,12 @@ public class Menu {
         menuItems.put(name, new MenuItem(name, price, category));
     }
 
-    public static MenuItem getMenuItem(String name) {
+    public MenuItem getMenuItem(String name) {
         validateNameExists(name);
         return menuItems.get(name);
     }
 
-    private static void validateNameExists(String name) {
+    private void validateNameExists(String name) {
         if (menuItems.get(name) == null) {
             throw new IllegalArgumentException(INVALID_ORDER);
         }
