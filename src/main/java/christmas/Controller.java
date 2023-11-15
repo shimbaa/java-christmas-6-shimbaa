@@ -1,5 +1,6 @@
 package christmas;
 
+import christmas.event.Event;
 import christmas.event.EventService;
 import christmas.order.Order;
 import christmas.order.OrderedMenus;
@@ -9,6 +10,7 @@ import christmas.view.MenuInputForm;
 import christmas.view.OutputView;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class Controller {
@@ -30,6 +32,9 @@ public class Controller {
         outputView.printTotalOrderPriceBeforeDiscount(orderedMenus.getTotalPrice());
 
         eventService.applyDiscount(order);
+
+        Map<Event, Integer> totalBenefit = eventService.getTotalBenefit();
+        outputView.printPresentEvent(totalBenefit);
     }
 
     private VisitingDate getVisitingDate() {

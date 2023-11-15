@@ -3,6 +3,7 @@ package christmas.event;
 import christmas.order.Order;
 import christmas.order.OrderedMenus;
 import christmas.order.VisitingDate;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class EventService {
     }
 
     public Map<Event, Integer> getTotalBenefit() {
-        return totalBenefit;
+        return Collections.unmodifiableMap(totalBenefit);
     }
 
     private void applyChristMasDiscount(VisitingDate visitingDate) {
