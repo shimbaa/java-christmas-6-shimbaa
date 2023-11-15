@@ -24,7 +24,7 @@ public class EventService {
 
     private void applyChristMasDiscount(VisitingDate visitingDate) {
         if (visitingDate.isInChristmasEventRange()) {
-            int discountAmount = 900 + (CHRISTMAS_DAY - (visitingDate.getDDayUntilChristmas()) * 100);
+            int discountAmount = 900 + ((CHRISTMAS_DAY - (visitingDate.getDDayUntilChristmas())) * 100);
             totalBenefit.put(Event.CHRISTMAS_DISCOUNT, discountAmount);
         }
     }
