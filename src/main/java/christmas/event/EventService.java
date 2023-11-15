@@ -20,6 +20,13 @@ public class EventService {
             applyWeekDayDiscount(orderedMenus, visitingDate);
             applyWeekEndDiscount(orderedMenus, visitingDate);
             applySpecialDiscount(visitingDate);
+            applyPresentEvent(orderedMenus);
+        }
+    }
+
+    public void applyPresentEvent(OrderedMenus orderedMenus) {
+        if (orderedMenus.getTotalPrice() >= 120_000) {
+            totalBenefit.put(Event.PRESENT_EVENT, 25_000);
         }
     }
 
