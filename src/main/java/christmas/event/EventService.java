@@ -1,6 +1,5 @@
-package christmas;
+package christmas.event;
 
-import christmas.discount.Event;
 import christmas.order.Order;
 import christmas.order.OrderedMenus;
 import christmas.order.VisitingDate;
@@ -20,6 +19,10 @@ public class EventService {
         applyWeekDayDiscount(orderedMenus, visitingDate);
         applyWeekEndDiscount(orderedMenus, visitingDate);
         applySpecialDiscount(visitingDate);
+    }
+
+    public Map<Event, Integer> getTotalBenefit() {
+        return totalBenefit;
     }
 
     private void applyChristMasDiscount(VisitingDate visitingDate) {

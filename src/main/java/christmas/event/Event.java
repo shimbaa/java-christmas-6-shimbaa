@@ -1,4 +1,4 @@
-package christmas.discount;
+package christmas.event;
 
 public enum Event {
     CHRISTMAS_DISCOUNT("크리스마스 디데이 할인"),
