@@ -36,6 +36,7 @@ public class Controller {
 
         Map<Event, Integer> totalBenefit = eventService.getTotalBenefit();
         outputView.printPresentEvent(totalBenefit);
+        outputView.printBenefitDetails(totalBenefit);
     }
 
     private VisitingDate getVisitingDate() {

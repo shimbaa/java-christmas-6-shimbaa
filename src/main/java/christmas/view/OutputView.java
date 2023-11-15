@@ -8,6 +8,9 @@ import java.util.Map;
 
 public class OutputView {
 
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#,###");
+
+
     public void printBenefitMessage(VisitingDateDTO visitingDateDTO) {
         int dayOfMonth = visitingDateDTO.getDayOfMonth();
         System.out.printf("12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!", dayOfMonth);
@@ -39,8 +42,24 @@ public class OutputView {
         }
     }
 
+    public void printBenefitDetails(Map<Event, Integer> totalBenefit) {
+        System.out.println();
+        System.out.println("<혜택 내역>");
+
+        totalBenefit.forEach((event, discount) -> {
+            if (discount != 0) {
+                System.out.println(formatDiscount(event, discount));
+            }
+        });
+    }
+
+    private String formatDiscount(Event event, int discount) {
+        String label = event.getLabel();
+        String formattedDiscount = getDecimalFormat(-discount) + "원";
+        return String.format("%s: %s", label, formattedDiscount);
+    }
+
     private String getDecimalFormat(int number) {
-        DecimalFormat df = new DecimalFormat("#,###");
-        return df.format(number);
+        return DECIMAL_FORMAT.format(number);
     }
 }
