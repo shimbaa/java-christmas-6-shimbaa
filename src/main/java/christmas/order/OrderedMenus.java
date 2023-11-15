@@ -1,5 +1,6 @@
 package christmas.order;
 
+import christmas.menu.Menu;
 import christmas.menu.MenuItem;
 import java.util.List;
 
@@ -29,5 +30,11 @@ public class OrderedMenus {
         return (int) menuItems.stream()
                 .filter(MenuItem::isMain)
                 .count();
+    }
+
+    public int getTotalPrice() {
+        return menuItems.stream()
+                .mapToInt(MenuItem::getPrice)
+                .sum();
     }
 }

@@ -12,13 +12,15 @@ public class EventService {
     private final Map<Event, Integer> totalBenefit = new HashMap<>();
 
     public void applyDiscount(Order order) {
-        OrderedMenus orderedMenus = order.getOrderedMenus();
-        VisitingDate visitingDate = order.getVisitingDate();
+        if (order.isTotalPriceOverEventCriteria()) {
+            OrderedMenus orderedMenus = order.getOrderedMenus();
+            VisitingDate visitingDate = order.getVisitingDate();
 
-        applyChristMasDiscount(visitingDate);
-        applyWeekDayDiscount(orderedMenus, visitingDate);
-        applyWeekEndDiscount(orderedMenus, visitingDate);
-        applySpecialDiscount(visitingDate);
+            applyChristMasDiscount(visitingDate);
+            applyWeekDayDiscount(orderedMenus, visitingDate);
+            applyWeekEndDiscount(orderedMenus, visitingDate);
+            applySpecialDiscount(visitingDate);
+        }
     }
 
     public Map<Event, Integer> getTotalBenefit() {
