@@ -24,11 +24,11 @@ public class Controller {
         inputView.printHelloMessage();
         Order order = new Order(getVisitingDate(), getOrderedMenus());
 
-        printOrderedInformation(order.getVisitingDate(), order.getOrderedMenus());
+        printOrderedInformation(order.visitingDate(), order.orderedMenus());
         eventService.applyDiscount(order);
 
         printTotalBenefits();
-        printTotalOrderPriceAfterDiscount(order.getOrderedMenus());
+        printTotalOrderPriceAfterDiscount(order.orderedMenus());
         printEventBadge();
     }
 

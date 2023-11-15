@@ -20,8 +20,8 @@ public class EventService {
 
     public void applyDiscount(Order order) {
         if (order.isTotalPriceOverEventCriteria()) {
-            OrderedMenus orderedMenus = order.getOrderedMenus();
-            VisitingDate visitingDate = order.getVisitingDate();
+            OrderedMenus orderedMenus = order.orderedMenus();
+            VisitingDate visitingDate = order.visitingDate();
 
             applyDiscount(orderedMenus, visitingDate);
         }
