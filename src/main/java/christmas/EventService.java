@@ -19,7 +19,7 @@ public class EventService {
         applyChristMasDiscount(visitingDate);
         applyWeekDayDiscount(orderedMenus, visitingDate);
         applyWeekEndDiscount(orderedMenus, visitingDate);
-
+        applySpecialDiscount(visitingDate);
     }
 
     private void applyChristMasDiscount(VisitingDate visitingDate) {
@@ -42,6 +42,12 @@ public class EventService {
             int mainMenuCount = orderedMenus.countMainMenu();
             int discountAmount = mainMenuCount * 2_023;
             totalBenefit.put(Event.WEEKEND_DISCOUNT, discountAmount);
+        }
+    }
+
+    private void applySpecialDiscount(VisitingDate visitingDate) {
+        if (visitingDate.isSpecialEventRange()) {
+            totalBenefit.put(Event.SPECIAL_DISCOUNT, 1_000);
         }
     }
 }

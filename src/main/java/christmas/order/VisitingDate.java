@@ -39,4 +39,9 @@ public class VisitingDate {
         DayOfWeek dayOfWeek = getDayOfWeek();
         return dayOfWeek.equals(DayOfWeek.FRIDAY) || dayOfWeek.equals(DayOfWeek.SATURDAY);
     }
+
+    public boolean isSpecialEventRange() {
+        DayOfWeek dayOfWeek = getDayOfWeek();
+        return dayOfWeek.equals(DayOfWeek.SUNDAY) || dayOfMonth == CHRISTMAS_DAY;
+    }
 }
