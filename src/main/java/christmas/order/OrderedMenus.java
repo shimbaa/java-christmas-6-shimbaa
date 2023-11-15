@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class OrderedMenus {
-    private static final String ONLY_BEVERAGE = "[INFO] 음료만 주문 시, 주문할 수 없습니다.";
+    private static final String ONLY_BEVERAGE = "[ERROR] 음료만 주문 시, 주문할 수 없습니다.";
     private static final int MAX_ORDER_AMOUNT = 20;
-    private static final String ORDER_AMOUNT_OVER_MAX = "[INFO] 메뉴는 한 번에 최대 20개까지만 주문할 수 있습니다";
+    private static final String ORDER_AMOUNT_OVER_MAX = "[ERROR] 메뉴는 한 번에 최대 20개까지만 주문할 수 있습니다";
     private final List<MenuItem> menuItems;
 
     public static OrderedMenus of(List<String> menuItemInputs) {
