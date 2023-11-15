@@ -1,4 +1,4 @@
-package christmas;
+package christmas.util;
 
 import org.junit.platform.commons.util.StringUtils;
 

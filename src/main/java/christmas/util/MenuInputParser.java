@@ -1,6 +1,6 @@
-package christmas.view;
+package christmas.util;
 
-import christmas.Validator;
+import christmas.view.MenuInputForm;
 import java.util.List;
 import java.util.stream.Stream;
 
