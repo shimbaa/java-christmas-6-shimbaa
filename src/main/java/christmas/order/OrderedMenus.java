@@ -6,7 +6,16 @@ import java.util.List;
 public class OrderedMenus {
     private final List<MenuItem> menuItems;
 
-    public OrderedMenus(List<MenuItem> menuItems) {
+    public static OrderedMenus of(List<String> menuItemInputs) {
+        Menu menu = new Menu();
+        List<MenuItem> menuItems = menuItemInputs.stream()
+                .map(menu::getMenuItem)
+                .toList();
+
+        return new OrderedMenus(menuItems);
+    }
+
+    private OrderedMenus(List<MenuItem> menuItems) {
         this.menuItems = menuItems;
     }
 
