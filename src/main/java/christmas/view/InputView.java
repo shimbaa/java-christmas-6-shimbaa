@@ -1,7 +1,8 @@
 package christmas.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import christmas.Validator;
+import christmas.util.Validator;
+import christmas.util.MenuInputParser;
 import java.util.List;
 
 public class InputView {
@@ -12,8 +13,8 @@ public class InputView {
     public int getVisitingDate() {
         System.out.println("12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)");
         String input = Console.readLine();
-        Validator.validateIsBlank(input);
-        Validator.validateIsInteger(input);
+        Validator.validateIsBlankForVisitingDate(input);
+        Validator.validateIsIntegerForVisitingDate(input);
         return Integer.parseInt(input);
     }
 

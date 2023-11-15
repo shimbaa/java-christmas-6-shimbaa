@@ -3,18 +3,24 @@ package christmas.util;
 import org.junit.platform.commons.util.StringUtils;
 
 public class Validator {
-    private static final String BLANK_INPUT = "[ERROR] 잘못된 입력값입니다.(빈칸 혹은 공백)";
-    private static final String NOT_INTEGER_INPUT = "[ERROR] 정수만 입력해 주세요.";
+    private static final String INVALID_DATE = "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.";
+    private static final String INVALID_ORDER = "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.";
 
-    public static void validateIsBlank(String value) {
+    public static void validateIsBlankForVisitingDate(String value) {
         if (StringUtils.isBlank(value)) {
-            throw new IllegalArgumentException(BLANK_INPUT);
+            throw new IllegalArgumentException(INVALID_DATE);
         }
     }
 
-    public static void validateIsInteger(String value) {
+    public static void validateIsIntegerForVisitingDate(String value) {
         if (!isInteger(value)) {
-            throw new IllegalArgumentException(NOT_INTEGER_INPUT);
+            throw new IllegalArgumentException(INVALID_DATE);
+        }
+    }
+
+    public static void validateIsIntegerForMenuQuantity(String value) {
+        if (!isInteger(value)) {
+            throw new IllegalArgumentException(INVALID_ORDER);
         }
     }
 

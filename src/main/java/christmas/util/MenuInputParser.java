@@ -36,7 +36,7 @@ public class MenuInputParser {
     }
 
     private static int parseMenuQuantity(String quantityString) {
-        Validator.validateIsInteger(quantityString);
+        Validator.validateIsIntegerForMenuQuantity(quantityString);
         int menuQuantity = Integer.parseInt(quantityString);
         if (menuQuantity < MINIMUM_QUANTITY) {
             throw new IllegalArgumentException(INVALID_ORDER);
