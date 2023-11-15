@@ -38,6 +38,12 @@ public class Controller {
         outputView.printPresentEvent(totalBenefit);
         outputView.printBenefitDetails(totalBenefit);
         outputView.printTotalBenefitAmount(eventService.getTotalBenefitAmount());
+
+        int totalPrice = orderedMenus.getTotalPrice();
+        int totalDiscountAmount = eventService.getTotalDiscountAmount();
+        int totalPriceAfterDiscount = totalPrice - totalDiscountAmount;
+
+        outputView.printTotalOrderPriceAfterDiscount(totalPriceAfterDiscount);
     }
 
     private VisitingDate getVisitingDate() {

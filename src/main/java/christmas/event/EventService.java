@@ -69,4 +69,12 @@ public class EventService {
                 .mapToInt(Integer::intValue)
                 .sum();
     }
+
+    public int getTotalDiscountAmount() {
+        return totalBenefit.keySet().stream()
+                .filter(key -> !key.equals(Event.PRESENT_EVENT))
+                .map(totalBenefit::get)
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
 }

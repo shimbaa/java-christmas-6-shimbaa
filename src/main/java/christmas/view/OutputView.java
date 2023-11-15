@@ -65,6 +65,12 @@ public class OutputView {
         System.out.println(getDecimalFormat(-totalBenefitAmount) + "원");
     }
 
+    public void printTotalOrderPriceAfterDiscount(int totalPriceAfterDiscount) {
+        System.out.println();
+        System.out.println("<할인 후 예상 결제 금액>");
+        System.out.println(getDecimalFormat(totalPriceAfterDiscount) + "원");
+    }
+
     private String getDecimalFormat(int number) {
         return DECIMAL_FORMAT.format(number);
     }
