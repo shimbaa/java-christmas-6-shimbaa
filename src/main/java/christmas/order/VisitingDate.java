@@ -1,5 +1,6 @@
 package christmas.order;
 
+import christmas.VisitingDateDTO;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
@@ -47,5 +48,9 @@ public class VisitingDate {
     public boolean isSpecialEventRange() {
         DayOfWeek dayOfWeek = getDayOfWeek();
         return dayOfWeek.equals(DayOfWeek.SUNDAY) || dayOfMonth == CHRISTMAS_DAY;
+    }
+
+    public VisitingDateDTO getVisitingDateDTO() {
+        return VisitingDateDTO.from(dayOfMonth);
     }
 }

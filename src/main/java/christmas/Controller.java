@@ -28,6 +28,7 @@ public class Controller {
 
         Order order = new Order(visitingDate, orderedMenus);
 
+        outputView.printBenefitMessage(visitingDate.getVisitingDateDTO());
         outputView.printOrderedMenu(menuInputForms);
         outputView.printTotalOrderPriceBeforeDiscount(orderedMenus.getTotalPrice());
 

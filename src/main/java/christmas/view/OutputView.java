@@ -1,11 +1,18 @@
 package christmas.view;
 
+import christmas.VisitingDateDTO;
 import christmas.event.Event;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Map;
 
 public class OutputView {
+
+    public void printBenefitMessage(VisitingDateDTO visitingDateDTO) {
+        int dayOfMonth = visitingDateDTO.getDayOfMonth();
+        System.out.printf("12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!", dayOfMonth);
+        System.out.println();
+    }
 
     public void printOrderedMenu(List<MenuInputForm> menuInputForms) {
         System.out.println();
