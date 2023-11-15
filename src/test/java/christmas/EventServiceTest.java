@@ -2,7 +2,8 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.*;
 
-import christmas.discount.Event;
+import christmas.event.Event;
+import christmas.event.EventService;
 import christmas.order.Order;
 import christmas.order.OrderedMenus;
 import christmas.order.VisitingDate;

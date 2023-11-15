@@ -2,6 +2,7 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.*;
 
+import christmas.order.VisitingDate;
 import java.time.DayOfWeek;
 import java.util.List;
 import java.util.Map;
