@@ -31,10 +31,6 @@ public class EventService {
         }
     }
 
-    public Map<Event, Integer> getTotalBenefit() {
-        return Collections.unmodifiableMap(totalBenefit);
-    }
-
     private void applyChristMasDiscount(VisitingDate visitingDate) {
         if (visitingDate.isInChristmasEventRange()) {
             int discountAmount = 900 + ((CHRISTMAS_DAY - (visitingDate.getDDayUntilChristmas())) * 100);
@@ -62,5 +58,15 @@ public class EventService {
         if (visitingDate.isSpecialEventRange()) {
             totalBenefit.put(Event.SPECIAL_DISCOUNT, 1_000);
         }
+    }
+
+    public Map<Event, Integer> getTotalBenefit() {
+        return Collections.unmodifiableMap(totalBenefit);
+    }
+
+    public int getTotalBenefitAmount() {
+        return totalBenefit.values().stream()
+                .mapToInt(Integer::intValue)
+                .sum();
     }
 }

@@ -59,6 +59,12 @@ public class OutputView {
         return String.format("%s: %s", label, formattedDiscount);
     }
 
+    public void printTotalBenefitAmount(int totalBenefitAmount) {
+        System.out.println();
+        System.out.println("<총혜택 금액>");
+        System.out.println(getDecimalFormat(-totalBenefitAmount) + "원");
+    }
+
     private String getDecimalFormat(int number) {
         return DECIMAL_FORMAT.format(number);
     }
